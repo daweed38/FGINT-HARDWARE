@@ -1,0 +1,142 @@
+
+(rules PCB FGINT-V4-MASTER-128
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias off)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 144)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.6)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.6)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 250.2 (type default_FarmerSoft))
+    (clear 350.2 (type default_"FarmerSoft Alim"))
+    (clear 50.0 (type smd_smd))
+    (clear 250.2 (type smd_FarmerSoft))
+    (clear 350.2 (type smd_"FarmerSoft Alim"))
+    (clear 250.2 (type "kicad_default"_FarmerSoft))
+    (clear 350.2 (type "kicad_default"_"FarmerSoft Alim"))
+    (clear 250.2 (type FarmerSoft_FarmerSoft))
+    (clear 350.2 (type FarmerSoft_"FarmerSoft Alim"))
+    (clear 350.2 (type "FarmerSoft Alim"_"FarmerSoft Alim"))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-FarmerSoft" "Via[0-1]_800:400_um" FarmerSoft
+  )
+  (via 
+    "Via[0-1]_800:400_um-FarmerSoft Alim" "Via[0-1]_800:400_um" "FarmerSoft Alim"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    FarmerSoft "Via[0-1]_800:400_um-FarmerSoft"
+  )
+  (via_rule
+    "FarmerSoft Alim" "Via[0-1]_800:400_um-FarmerSoft Alim"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class FarmerSoft
+    /GPIOA07 /GPIOB07 /GPIOA06 /GPIOB06 /GPIOA05 /GPIOB05 /GPIOA04 /GPIOB04
+    /GPIOA03 /GPIOB03 /GPIOA02 /GPIOB02 /GPIOA01 /GPIOB01 /GPIOA00 /GPIOB00
+    /GPIOB40 /GPIOA40 /GPIOB41 /GPIOA41 /GPIOB42 /GPIOA42 /GPIOB43 /GPIOA43
+    /GPIOB44 /GPIOA44 /GPIOB45 /GPIOA45 /GPIOB46 /GPIOA46 /GPIOB47 /GPIOA47
+    /CA0 /CB0 /CA4 /CB4 /GPIOB10 /GPIOA10 /GPIOB11 /GPIOA11
+    /GPIOB12 /GPIOA12 /GPIOB13 /GPIOA13 /GPIOB14 /GPIOA14 /GPIOB15 /GPIOA15
+    /GPIOB16 /GPIOA16 /GPIOB17 /GPIOA17 /GPIOA57 /GPIOB57 /GPIOA56 /GPIOB56
+    /GPIOA55 /GPIOB55 /GPIOA54 /GPIOB54 /GPIOA53 /GPIOB53 /GPIOA52 /GPIOB52
+    /GPIOA51 /GPIOB51 /GPIOA50 /GPIOB50 /CA1 /CB1 /CA5 /CB5
+    /GPIOB20 /GPIOA20 /GPIOB21 /GPIOA21 /GPIOB22 /GPIOA22 /GPIOB23 /GPIOA23
+    /GPIOB24 /GPIOA24 /GPIOB25 /GPIOA25 /GPIOB26 /GPIOA26 /GPIOB27 /GPIOA27
+    /GPIOA67 /GPIOB67 /GPIOA66 /GPIOB66 /GPIOA65 /GPIOB65 /GPIOA64 /GPIOB64
+    /GPIOA63 /GPIOB63 /GPIOA62 /GPIOB62 /GPIOA61 /GPIOB61 /GPIOA60 /GPIOB60
+    /CA2 /CB2 /CA6 /CB6 /GPIOB30 /GPIOA30 /GPIOB31 /GPIOA31
+    /GPIOB32 /GPIOA32 /GPIOB33 /GPIOA33 /GPIOB34 /GPIOA34 /GPIOB35 /GPIOA35
+    /GPIOB36 /GPIOA36 /GPIOB37 /GPIOA37 /GPIOA77 /GPIOB77 /GPIOA76 /GPIOB76
+    /GPIOA75 /GPIOB75 /GPIOA74 /GPIOB74 /GPIOA73 /GPIOB73 /GPIOA72 /GPIOB72
+    /GPIOA71 /GPIOB71 /GPIOA70 /GPIOB70 /CA3 /CB3 /CA7 /CB7
+    "Net-(J26-Pad1)" /SDA /SCL "Net-(J26-Pad7)" "Net-(J26-Pad8)" "Net-(J26-Pad10)" "Net-(J26-Pad17)" "Net-(J26-Pad19)"
+    "Net-(J26-Pad21)" "Net-(J26-Pad23)" "Net-(J26-Pad24)" "Net-(J26-Pad26)" "Net-(J26-Pad27)" "Net-(J26-Pad28)" /SDA5V /SCL5V
+    "Net-(R3-Pad1)" "Net-(U1-Pad14)" "Net-(U1-Pad11)" /INTB0 /INTA0 /INTA4 /INTB4 "Net-(U2-Pad11)"
+    "Net-(U2-Pad14)" "Net-(U3-Pad14)" "Net-(U3-Pad11)" /INTB1 /INTA1 /INTA5 /INTB5 "Net-(U4-Pad11)"
+    "Net-(U4-Pad14)" /INTA2 /INTB2 "Net-(U5-Pad11)" "Net-(U5-Pad14)" "Net-(U6-Pad14)" "Net-(U6-Pad11)" /INTB6
+    /INTA6 /INTA3 /INTB3 "Net-(U7-Pad11)" "Net-(U7-Pad14)" "Net-(U8-Pad14)" "Net-(U8-Pad11)" /INTB7
+    /INTA7
+    (clearance_class FarmerSoft)
+    (via_rule FarmerSoft)
+    (rule
+      (width 350.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "FarmerSoft Alim"
+    +9V GND +5V +3V3 /ENBL3.3 /+5VPIA /+5VPIB
+    (clearance_class "FarmerSoft Alim")
+    (via_rule FarmerSoft Alim)
+    (rule
+      (width 550.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
